@@ -1,0 +1,71 @@
+version: "2"
+type: backend
+tech_stack:
+  - Python
+  - FastAPI
+  - Supabase Auth
+  - Pydantic
+  - Uvicorn
+  - Pandas
+features:
+  - name: Health Check API
+    description: Health endpoint to verify API status
+    files:
+      - app/main.py
+    endpoints:
+      - method: GET
+        path: /api/v1/health
+        description: Check backend status
+        auth_required: false
+        response_schema:
+          "200": HealthStatus
+  - name: Session Management API
+    description: Handle CSV uploads and analysis session state
+    files:
+      - app/api/routes/session.py
+      - app/services/analysis.py
+    endpoints:
+      - method: POST
+        path: /api/v1/session/upload
+        description: Upload a CSV file and start an autonomous analysis session
+        auth_required: true
+        request_schema:
+          body:
+            file: multipart/form-data
+        response_schema:
+          "200": UploadResponse
+          "400": Validation error
+          "401": Unauthorized
+      - method: GET
+        path: /api/v1/session/{session_id}/status
+        description: Check the progress status of a running analysis
+        auth_required: true
+        response_schema:
+          "200": SessionStatusResponse
+          "401": Unauthorized
+          "404": Not Found
+      - method: GET
+        path: /api/v1/session/{session_id}/analysis
+        description: Retrieve the final insights and generated charts for a completed session
+        auth_required: true
+        response_schema:
+          "200": AnalysisResponse
+          "401": Unauthorized
+          "404": Not Found
+    depends_on:
+      - Authentication
+  - name: History API
+    description: Retrieve a history of user's past data analysis sessions
+    files:
+      - app/api/routes/history.py
+    endpoints:
+      - method: GET
+        path: /api/v1/history
+        description: Get paginated list of past analysis sessions for the authenticated user
+        auth_required: true
+        response_schema:
+          "200": HistoryListResponse
+          "401": Unauthorized
+    depends_on:
+      - Authentication
+known_limitations: []

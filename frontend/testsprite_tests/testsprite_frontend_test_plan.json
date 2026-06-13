@@ -1,0 +1,1209 @@
+[
+  {
+    "id": "TC001",
+    "title": "Upload a CSV and open the completed analysis dashboard",
+    "description": "An authenticated user can upload a CSV from history, start analysis, see progress, and arrive automatically at the completed session dashboard.",
+    "category": "CSV Upload and Analysis Start",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Upload a CSV file"
+      },
+      {
+        "type": "action",
+        "description": "Review or skip analysis preferences"
+      },
+      {
+        "type": "action",
+        "description": "Start the analysis"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify upload or analysis progress is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the completed session dashboard is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Sign in and reach analysis history",
+    "description": "A returning user can sign in with valid credentials and land on their analysis history page.",
+    "category": "User Sign In",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the analyses history page is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Create a new account successfully",
+    "description": "A new visitor can register with valid credentials and see confirmation that the account was created or needs email review.",
+    "category": "User Sign Up",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a new valid email"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the confirm password field with the same valid password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an account creation confirmation or email review message is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Redirect unauthenticated visitors away from protected pages",
+    "description": "A guest trying to open a protected page is redirected to the login page instead of seeing private content.",
+    "category": "User Sign In",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the login page is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Review completed session content across tabs",
+    "description": "This verifies that an authenticated user can open a completed session dashboard and view the session content across the main tabs.",
+    "category": "Session Dashboard and Results Review",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Open a prior analysis"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the session summary, charts, insights, forecast, and chat content are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Switch between dashboard tabs on a completed session",
+    "description": "An authenticated user can move across the dashboard tabs and see the relevant analysis content load for each section.",
+    "category": "Dashboard Tabs",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Open a completed session dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the charts tab"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the insights tab"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the forecast tab"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the chat tab"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected dashboard content is displayed for the current tab"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "View completed analysis history",
+    "description": "This verifies that an authenticated user can open their analysis history and see prior analyses listed.",
+    "category": "Analysis History",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify prior analyses are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Switch between dashboard tabs",
+    "description": "This verifies that an authenticated user can switch among dashboard tabs and see the selected content update.",
+    "category": "Session Dashboard and Results Review",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Open a prior analysis"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the charts tab"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the insights tab"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the forecast tab"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the chat tab"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected section updates as each tab is opened"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Open a completed session from history",
+    "description": "An authenticated user can return to history and reopen an existing completed analysis session.",
+    "category": "Analysis History",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Open a completed analysis session"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the session dashboard is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Open a prior analysis from history",
+    "description": "This verifies that an authenticated user can reopen an existing analysis from history and reach its dashboard.",
+    "category": "Analysis History",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Open a prior analysis"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the analysis dashboard is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Browse and manage prior analyses in history",
+    "description": "A returning user can search, star, rename, and delete prior analyses from the history page.",
+    "category": "Analysis History",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Search for a prior analysis"
+      },
+      {
+        "type": "action",
+        "description": "Star an analysis"
+      },
+      {
+        "type": "action",
+        "description": "Rename an analysis"
+      },
+      {
+        "type": "action",
+        "description": "Delete an analysis"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the history list reflects the updated analysis state"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Ask a dataset question in chat and receive an answer",
+    "description": "An authenticated user can submit a dataset question in the dashboard chat and see an AI-generated response.",
+    "category": "Dataset Chat",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Open a completed session dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the chat tab"
+      },
+      {
+        "type": "action",
+        "description": "Ask a dataset question"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an AI-generated chat answer is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Ask a dataset question in chat",
+    "description": "This verifies that an authenticated user can ask a question about the dataset in chat and receive a conversational answer.",
+    "category": "Dataset Q&A Chat",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Open a prior analysis"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the chat tab"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the chat input with a question about the dataset"
+      },
+      {
+        "type": "action",
+        "description": "Send the message"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user message is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an assistant response is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Search history for a specific analysis",
+    "description": "This verifies that an authenticated user can search their history and see only matching analyses.",
+    "category": "Analysis History",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the history search field with a filename or label from a prior analysis"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify matching analyses are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC015",
+    "title": "Download analysis deliverables from a completed session",
+    "description": "An authenticated user can download the cleaned CSV, notebook, and PDF report from a completed analysis session.",
+    "category": "Session Downloads",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Open a completed session dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Download the cleaned CSV"
+      },
+      {
+        "type": "action",
+        "description": "Download the notebook"
+      },
+      {
+        "type": "action",
+        "description": "Download the PDF report"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the session download options are available"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC016",
+    "title": "Star an analysis from history",
+    "description": "This verifies that an authenticated user can toggle the star on an analysis and see the starred state update.",
+    "category": "Analysis History",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the star on an analysis"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the analysis is marked as starred"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC017",
+    "title": "Delete an analysis from history",
+    "description": "This verifies that an authenticated user can delete a prior analysis and see it removed from the list.",
+    "category": "Analysis History",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Delete an analysis"
+      },
+      {
+        "type": "action",
+        "description": "Confirm the deletion"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the analysis is removed from the list"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC018",
+    "title": "Show only starred analyses",
+    "description": "This verifies that an authenticated user can filter history to starred analyses and see only starred items.",
+    "category": "Analysis History",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Enable the starred-only filter"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify only starred analyses are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC019",
+    "title": "Use a suggested question in chat",
+    "description": "An authenticated user can choose a suggested question in chat and receive a relevant AI response.",
+    "category": "Dataset Chat",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Open a completed session dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the chat tab"
+      },
+      {
+        "type": "action",
+        "description": "Select a suggested question"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an AI-generated chat answer is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC020",
+    "title": "Rename an analysis in history",
+    "description": "This verifies that an authenticated user can rename a prior analysis and see the updated label in the list.",
+    "category": "Analysis History",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Rename an analysis"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the label field with a new custom name"
+      },
+      {
+        "type": "action",
+        "description": "Save the rename"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated label is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC021",
+    "title": "Download the PDF report from a completed session",
+    "description": "This verifies that a user can download the PDF report output from a completed analysis session and the download option is available.",
+    "category": "Downloads",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open a completed analysis session dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Open the download options"
+      },
+      {
+        "type": "action",
+        "description": "Download the PDF report output"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the report download option is available"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC022",
+    "title": "Download the cleaned dataset from a completed session",
+    "description": "This verifies that a user can download the cleaned CSV output from a completed analysis session and the download option is available.",
+    "category": "Downloads",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open a completed analysis session dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Open the download options"
+      },
+      {
+        "type": "action",
+        "description": "Download the cleaned CSV output"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cleaned dataset download option is available"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC023",
+    "title": "Download the Jupyter notebook from a completed session",
+    "description": "This verifies that a user can download the Jupyter notebook output from a completed analysis session and the download option is available.",
+    "category": "Downloads",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Open a completed analysis session dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Open the download options"
+      },
+      {
+        "type": "action",
+        "description": "Download the Jupyter notebook output"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the notebook download option is available"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC024",
+    "title": "Prevent registration with an already used email",
+    "description": "A visitor who tries to register with an email that is already in use sees an inline error and does not complete signup.",
+    "category": "User Sign Up",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with an already registered email"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the confirm password field with the same valid password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a duplicate account error is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC025",
+    "title": "Block access to another user's session",
+    "description": "This verifies that an authenticated user who opens a session that belongs to another account sees an access denied state and a way back to analyses.",
+    "category": "Session Dashboard and Results Review",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to a session dashboard that belongs to another account"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an access denied message is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a link back to analyses is displayed"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC026",
+    "title": "Reject incorrect sign in credentials",
+    "description": "A user entering invalid credentials on the login page sees an authentication error and cannot access the app.",
+    "category": "User Sign In",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a valid email"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with an invalid password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an authentication error is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC027",
+    "title": "Validate chat character limit",
+    "description": "This verifies that an authenticated user sees validation when entering more than the allowed chat character limit.",
+    "category": "Dataset Q&A Chat",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Open a prior analysis"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the chat tab"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the chat input with text that exceeds the character limit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a chat input validation error is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC028",
+    "title": "Reject an invalid email during registration",
+    "description": "A visitor entering an invalid email format on sign up sees an inline validation error and cannot proceed.",
+    "category": "User Sign Up",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with an invalid email format"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the confirm password field with the same valid password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an email validation error is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC029",
+    "title": "Reject mismatched signup passwords",
+    "description": "A visitor who enters different password values on sign up sees a validation error and cannot create the account.",
+    "category": "User Sign Up",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with a new valid email"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with a valid password"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the confirm password field with a different password"
+      },
+      {
+        "type": "action",
+        "description": "Submit the registration form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a password mismatch validation error is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC030",
+    "title": "Reject a non-CSV upload",
+    "description": "An authenticated user who uploads a non-CSV file sees a validation message and cannot start analysis.",
+    "category": "CSV Upload and Analysis Start",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Upload a non-CSV file"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a file type validation message is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC031",
+    "title": "Reject an oversized CSV upload",
+    "description": "An authenticated user who uploads a CSV above the allowed size sees a validation message and cannot continue.",
+    "category": "CSV Upload and Analysis Start",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the sign-in form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /history"
+      },
+      {
+        "type": "action",
+        "description": "Upload a CSV file larger than the allowed size"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a file size validation message is visible"
+      }
+    ],
+    "priority": "Low"
+  }
+]

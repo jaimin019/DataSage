@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC001",
+    "title": "get api v1 health returns status ok",
+    "description": "Verify that a GET request to /api/v1/health returns a 200 status code with a response indicating the backend service is running and healthy."
+  },
+  {
+    "id": "TC002",
+    "title": "post api v1 session upload with valid csv and jwt",
+    "description": "Test uploading a valid CSV file with a valid JWT token to /api/v1/session/upload returns 200 with session_id, pending status, and dataset_info, and starts the analysis session."
+  },
+  {
+    "id": "TC003",
+    "title": "post api v1 session upload without jwt returns unauthorized",
+    "description": "Verify that a POST request to /api/v1/session/upload without a JWT token returns a 401 Unauthorized response."
+  },
+  {
+    "id": "TC004",
+    "title": "post api v1 session upload with invalid or empty csv returns validation error",
+    "description": "Ensure that uploading an invalid or empty CSV file to /api/v1/session/upload returns a 400 validation error and no session is created."
+  },
+  {
+    "id": "TC005",
+    "title": "get api v1 session sessionid status with valid jwt returns progress",
+    "description": "Check that a GET request to /api/v1/session/{session_id}/status with a valid JWT returns 200 with current pipeline step and progress details."
+  },
+  {
+    "id": "TC006",
+    "title": "get api v1 session sessionid status without jwt returns unauthorized",
+    "description": "Verify that a GET request to /api/v1/session/{session_id}/status without a JWT returns a 401 Unauthorized response."
+  },
+  {
+    "id": "TC007",
+    "title": "get api v1 session sessionid status for unknown sessionid returns not found",
+    "description": "Ensure that a GET request to /api/v1/session/{session_id}/status with an unknown session_id returns a 404 Not Found response."
+  },
+  {
+    "id": "TC008",
+    "title": "get api v1 session sessionid analysis after completion returns insights",
+    "description": "Test that a GET request to /api/v1/session/{session_id}/analysis after analysis completion returns 200 with final insights and generated charts."
+  },
+  {
+    "id": "TC009",
+    "title": "get api v1 session sessionid analysis before completion returns not ready error",
+    "description": "Verify that a GET request to /api/v1/session/{session_id}/analysis before analysis completion returns a response indicating the analysis is not yet ready or an equivalent non-200 error."
+  },
+  {
+    "id": "TC010",
+    "title": "get api v1 history with valid jwt returns paginated history",
+    "description": "Check that a GET request to /api/v1/history with a valid JWT returns 200 with a paginated list of the authenticated user's past analysis sessions."
+  }
+]
