@@ -2,7 +2,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Demo-Live-green.svg)](https://datasage.demo.app)
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
-[![Next.js 15](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
+[![TanStack Start](https://img.shields.io/badge/TanStack_Start-Beta-black.svg)](https://tanstack.com/router)
 
 DataSage is an autonomous AI data analyst that instantly cleans, explores, and explains your tabular datasets. Simply upload a CSV file to automatically generate statistical distributions, machine learning clusters, anomaly detection, time-series forecasting, and an interactive chat interface to ask questions directly to your data.
 
@@ -19,8 +19,8 @@ DataSage uses a modern decoupled architecture. The frontend handles interactive 
 
 | Layer | Technology | Purpose |
 |-------|------------|---------|
-| **Frontend** | Next.js 15, React, TailwindCSS | UI Framework and Styling |
-| **Components** | ShadCN UI, Recharts | Accessible UI elements and data visualizations |
+| **Frontend** | TanStack Start, Vite, React, TailwindCSS v4 | UI Framework and Styling |
+| **Components** | ShadCN UI, Framer Motion, Recharts | Accessible UI elements, smooth animations, and data visualizations |
 | **Backend** | FastAPI, Python 3.11 | High-performance async API server |
 | **ML/Data** | Pandas, Scikit-Learn, Prophet | Data manipulation, clustering, and forecasting |
 | **AI Agents** | LangGraph, LangChain, Groq (Llama 3) | Agentic orchestration and LLM reasoning |
@@ -30,8 +30,8 @@ DataSage uses a modern decoupled architecture. The frontend handles interactive 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/datasage.git
-   cd datasage
+   git clone https://github.com/jaimin019/DataSage.git
+   cd DataSage
    ```
 
 2. **Backend Setup**
@@ -53,15 +53,15 @@ DataSage uses a modern decoupled architecture. The frontend handles interactive 
    cd ../frontend
    npm install
    
-   # Copy .env.local.example to .env.local
-   cp .env.local.example .env.local
+   # Copy .env.example to .env.local
+   cp .env.example .env.local
    
-   # Run the Next.js development server
+   # Run the development server
    npm run dev
    ```
 
 4. **Access the Application**
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+   Open [http://localhost:3000](http://localhost:3000) (or the port specified by Vite) in your browser.
 
 ## 🔐 Environment Variables
 
@@ -76,7 +76,9 @@ DataSage uses a modern decoupled architecture. The frontend handles interactive 
 ### Frontend (`frontend/.env.local`)
 | Variable | Description |
 |----------|-------------|
-| `NEXT_PUBLIC_API_URL` | URL to FastAPI backend (e.g., `http://localhost:8000`) |
+| `VITE_API_URL` | URL to FastAPI backend (e.g., `http://localhost:8000`) |
+| `VITE_SUPABASE_URL` | Your Supabase project URL |
+| `VITE_SUPABASE_ANON_KEY` | Your Supabase anonymous key |
 
 ## 🤝 Contributing
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
