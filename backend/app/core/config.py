@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     SUPABASE_JWT_SECRET: str
     SUPABASE_BUCKET: str = "datasage-uploads"
     MAX_FILE_SIZE_MB: int = 50
-    ALLOWED_ORIGINS: str = "http://localhost:3000"
+    ALLOWED_ORIGINS: str = "http://localhost:3000,http://localhost:5173,http://127.0.0.1:5173"
     ENVIRONMENT: str = "development"
     LLM_PROVIDER: str = "groq"
     LLM_MODEL: str = "llama-3.1-8b-instant"
